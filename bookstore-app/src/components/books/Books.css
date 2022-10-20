@@ -1,0 +1,30 @@
+.books-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.books-wrapper a {
+    text-decoration: none;
+}
+
+.books {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.link-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    text-align: center;
+    width: 250px;
+    color: black;
+}
+
+.link-text {
+    width: 50%;
+}

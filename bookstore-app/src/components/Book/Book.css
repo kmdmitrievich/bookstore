@@ -1,0 +1,9 @@
+.book-wrapper {
+    width: auto;
+}
+
+.text {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}

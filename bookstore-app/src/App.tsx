@@ -52,7 +52,6 @@ function App() {
             <Route path="signup" element={<SignUp />} />
             <Route path="books" element={<Books />} />
             <Route path="books/:isbn13" element={<BookI />} />
-            <Route path="newslatter" element={<NewsLatter />} />
           </Route>
         </Routes>
       </BrowserRouter>
