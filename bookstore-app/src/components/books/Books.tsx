@@ -9,19 +9,20 @@ const BookList = (props: { books: any[] }) => {
     return (
         // ЭТО Я ПЫТАЛСЯ ВЫВЕСТИ КНИГИ НА ЗАНЯТИИ. НО ТАК КАК СПЕШИЛ, ВЫШЛА ФИГНЯ.
         // ТАК ЧТО МОЖЕШЬ ТУТ ВСЁ ФИКСИТЬ ЛИБО УДАЛИТЬ И САМ СПОКОЙНО СДЕЛАТЬ
-        <Row>
-            <Col sm={8}>
-                <Post bookInfo={books[0]} isFull={true} />
-            </Col>
-            <Col sm={4}>
-                <Row>
-                    <Post bookInfo={books[1]} isFull={false} />
-                </Row>
-                <Row>
-                    <Post bookInfo={books[2]} isFull={false} />
-                </Row>
-            </Col>
-        </Row>
+        // <Row>
+        //     <Col sm={8}>
+        //         <Post bookInfo={books[0]} isFull={true} />
+        //     </Col>
+        //     <Col sm={4}>
+        //         <Row>
+        //             <Post bookInfo={books[1]} isFull={false} />
+        //         </Row>
+        //         <Row>
+        //             <Post bookInfo={books[2]} isFull={false} />
+        //         </Row>
+        //     </Col>
+        // </Row>
+        <div></div>
     )
 }
 

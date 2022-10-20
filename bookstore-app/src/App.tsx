@@ -10,12 +10,17 @@ import { NewsLatter } from './components/newslatter/NewsLatter';
 import { Line } from './components/line/Line';
 import { Footer } from './components/footer/Footer';
 import { Books } from './components/books/Books';
+import axios from 'axios';
 
 function App() {
   const dispatch = useDispatch();
   const isAuthorized = !!localStorage.getItem('jwtAccess');
 
   useEffect(() => {
+    axios.get("https://api.itbook.store/1.0/new").then( (data)=>  {
+      console.log(data.data)
+    })
+    
     const token = localStorage.getItem('jwtAccess');
     if (token) {
       dispatch(getUser())
