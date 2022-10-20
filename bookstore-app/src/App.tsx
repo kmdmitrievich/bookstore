@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios'
 import { getUser } from './redux/action_creators';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from './components/header/Header';
@@ -10,8 +11,10 @@ import { NewsLatter } from './components/newslatter/NewsLatter';
 import { Line } from './components/line/Line';
 import { Footer } from './components/footer/Footer';
 import { Books } from './components/books/Books';
+import BookI from './components/Book/Book';
 
 function App() {
+  const [books, setBooks] = useState([])
   const dispatch = useDispatch();
   const isAuthorized = !!localStorage.getItem('jwtAccess');
 
@@ -24,7 +27,15 @@ function App() {
       // if (pathname !== '/signin' && pathname !== '/posts' && pathname !== '/signup')
       //   window.location.href = '/signin'
     }
+
+    axios.get('https://api.itbook.store/1.0/new').then(({ data }) => {
+      setBooks(data.books)
+    })
+
   }, [localStorage.getItem('jwtAccess')])
+
+
+
   return (
     <div>
       <Header />
@@ -40,6 +51,7 @@ function App() {
             <Route path="signin" element={<SignIn />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="books" element={<Books />} />
+            <Route path="books/:isbn13" element={<BookI />} />
             <Route path="newslatter" element={<NewsLatter />} />
           </Route>
         </Routes>
